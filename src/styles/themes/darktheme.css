@@ -1,0 +1,27 @@
+.dark_theme {
+    background-color: var(--clr-dark1);
+    color: hsl(var(--clr-light));
+    transition: 0.5s;
+  }
+  .dark_theme li {
+    color: hsl(var(--clr-light));
+    padding-bottom: 0.5rem;
+  }
+
+  .dark_theme h5{
+    color: hsl(var(--clr-light)) !important;
+  }
+
+  .dark_theme h6{
+    color: hsl(var(--clr-light));
+  }
+  .dark_theme a{
+    color: var(--clr-grey1) !important;
+  }
+
+  .dark_theme .dropdown_list_container li {
+    background: var(--clr-dark1);
+}
+body .dark_theme{
+    background-color: var(--clr-dark1);
+}

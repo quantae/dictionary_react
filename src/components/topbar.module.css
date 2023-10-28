@@ -1,0 +1,37 @@
+
+select {
+    border: none;
+   /* padding-right: 0.3rem; */
+    background: none;
+    outline: none;
+    font-size: 0.9rem;
+    width: 100%;
+    color: hsl(var(--clr-dark));
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.custom_select {
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom_select select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .custom_arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #333;
+  }

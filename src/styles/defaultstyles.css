@@ -1,0 +1,438 @@
+/* --------------*/
+/* Font option selects*/
+/* -------------- */
+.sans_serif{
+  font-family: var(--ff-sans-serif);
+}
+.serif {
+  font-family: var(--ff-serif);
+}
+.mono {
+  font-family: var(--ff-mono);
+}
+
+/*------------*/
+/* DARK THEME*/
+/*----------*/
+
+.light_theme {
+  background-color: hsl(var(--clr-light));
+  color: hsl(var(--clr-dark1));
+  transition: 0.5s;
+}
+
+
+
+/* ---------------------*/
+/* Custom properties    */
+/* -------------------- */
+:root {
+    /* colors: light mode */
+    --clr-primary: 274, 82%, 60%;
+
+    --clr-dark1: #050505;
+    --clr-dark2: #1F1F1F;
+    --clr-dark3: #2D2D2D;
+    --clr-dark4: #3A3A3A;
+
+    --clr-light: 227, 100%, 98%;
+
+    --clr-white: 0, 0%, 100%;
+    --clr-grey1: #757575;
+    --clr-grey2: #E9E9E9;
+    --clr-grey3: #F4F4F4;
+
+    --clr-warning: #FF5252;
+  
+    /* font-sizes */
+    --fs-900: 9.375rem;
+    --fs-800: 6.35rem;
+    --fs-700: 4rem;
+    --fs-600: 2rem;
+    --fs-500: 1.75rem;
+    --fs-400: 1.125rem;
+    --fs-300: 1rem;
+    --fs-200: 0.938rem;
+    --fs-100: 0.8rem;
+  
+  
+    /* font-families */
+    --ff-mono: 'Space Mono', monospace;
+    --ff-serif: "Serif", serif;
+    --ff-sans-serif: "Sans Serif", sans-serif;
+  }
+  
+  /* ----------*/
+  /* Dark Mode  */
+  /* ---------- */
+  
+  
+  /* ----------*/
+  /* Reset     */
+  /* ---------- */
+  
+  /* https://piccalil.li/blog/a-medern-css-reset/ */
+  /* Box sizing */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Reset margins */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul[class],
+  ol[class],
+  li,
+  figure,
+  figcaption,
+  blockquote,
+  dl,
+  dd,
+  figure,
+  picture {
+    margin: 0;
+  }
+  
+  h1, 
+  h2, 
+  h3, 
+  h4,
+  h5,
+  h6,
+  p {
+    font-weight: 400;
+  }
+  
+  /* Set core body defaults */
+  body {
+    /*font-family: var(--ff-sans-serif);*/
+    font-size: var(--fs-400);
+    color: hsl(var(--clr-dark1));
+    transition: 0.6s;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    background-color: hsl(var(--clr-light));
+  }
+ 
+  
+  /* Remove list styles on ul, ol elements with a class attribute */
+  ul[class],
+  ol[class] {
+    list-style: none;
+  }
+  
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  
+  /* Make images easier to work with */
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  
+  /* Remove all animations and transitions for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+  
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+  }
+  /* ----------*/
+  /* Font styles*/
+  /* ---------- */
+  h1 {
+    font-family: var(--ff-monospace);
+    line-height: 1.2;
+    font-size: var(--fs-600);
+    font-weight: bold;
+  }
+  h2 {
+    font-family: var(--ff-monospace);
+    line-height: 1.2;
+    font-size: var(--fs-500);
+    font-weight: bold;
+  }
+  h3 {
+    font-family: var(--ff-monospace);
+    line-height: 1.2;
+    font-size: var(--fs-400);
+    font-weight: 600;
+  }
+  h4 {
+    font-family: var(--ff-monospace);
+    line-height: 1.2;
+    font-size: var(--fs-300);
+    font-weight: 400;
+  }
+  h5 {
+    font-family: var(--ff-monospace);
+    line-height: 1.2;
+    font-size: var(--fs-200);
+    font-weight: 700;
+  }
+  p {
+    font-family: var(--ff-monospace);
+    line-height: 1.2;
+    font-size: var(--fs-100);
+    font-weight:300;
+    color: hsl(var(--clr-accent));
+  }
+  input::placeholder {
+    font-family: var(--ff-monospace);
+    color: hsl(var(--clr-accent));
+    font-size: var(--fs-100);
+    padding-left: 0.2rem;
+  }
+  /* ----------*/
+  /* Colors     */
+  /* ---------- */
+  .bg-dark {
+    background-color: hsl(var(--clr-dark));
+  }
+  
+  .bg-accent {
+    background-color: hsl(var(--clr-light));
+  }
+  
+  .bg-white {
+    background-color: hsl(var(--clr-white));
+  }
+  
+  .text-dark {
+    color: hsl(var(--clr-dark));
+  }
+  
+  .text-accent {
+    color: hsl(var(--clr-accent));
+  }
+  .text-primary {
+    color: hsl(var(--clr-primary));
+  }
+  .text-white {
+    color: hsl(var(--clr-white));
+  }
+  
+  /* ----------*/
+  /* typography     */
+  /* ---------- */
+  .ff-serif { font-family: var(--ff-serif); } 
+  .ff-sans-cond { font-family: var(--ff-sans-cond); } 
+  .ff-sans-normal { font-family: var(--ff-sans-normal); } 
+  
+  .letter-spacing-1 { letter-spacing: 4.75px; } 
+  .letter-spacing-2 { letter-spacing: 2.7px; } 
+  .letter-spacing-3 { letter-spacing: 2.35px; } 
+  
+  .uppercase { text-transform: uppercase; }
+  
+  .fs-900 { font-size: var(--fs-900); }
+  .fs-800 { font-size: var(--fs-800); }
+  .fs-700 { font-size: var(--fs-700); }
+  .fs-600 { font-size: var(--fs-600); }
+  .fs-500 { font-size: var(--fs-500); }
+  .fs-400 { font-size: var(--fs-400); }
+  .fs-300 { font-size: var(--fs-300); }
+  .fs-200 { font-size: var(--fs-200); }
+  
+  .fs-900,
+  .fs-800,
+  .fs-700,
+  .fs-600 {
+    line-height: 1.1;
+  }
+  /* ----------*/
+  /* Utiliy classes*/
+  /* ---------- */
+  .inline {
+    display: inlne;
+  }
+  /* ----------*/
+  /* Flex classes*/
+  /* ---------- */
+  .flex {
+    display: flex;
+  }
+  .flex-gap {
+    display: flex;
+    gap: var(--gap, 1rem);
+  }
+  
+  .flex-space-between {
+    display: flex;
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .align-center {
+    align-items: center;
+  }
+  .flex-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+  .grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+  }
+ 
+/* Utility class for horizontal line */
+.hr {
+    border: none;
+    border-top: 1px solid #E9E9E9;
+    margin: 1rem 0;
+    width: 100%;
+  }
+  .container {
+    padding: 1rem;
+    padding-inline: 2em;
+    margin-inline: auto;
+    max-width: 46rem;
+  }
+  
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+
+  
+  
+  /* ----------*/
+  /*  Custom Component styles layouts*/
+  /* ---------- */
+  .card {
+    background: hsl(var(--clr-white));
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    
+  }
+  .profile_img {
+    width: 100%;
+    border-radius: 50%;
+  }
+  
+  .profile_img_container {
+    width: 7.3rem;
+      height: 7.3rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .username_container {
+  }
+  
+  .follower_history {
+    background: hsl(var(--clr-light));
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .follower-numbers {
+    color: hsl(var(--clr-dark));
+    font-size: var(--fs-600);
+  }
+  
+  .search_container {
+    background-color: hsl(var(--clr-white));
+    padding: 0.3rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  input {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    color: hsl(var(--clr-dark));
+    font-family: var(--ff-sans-normal);
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-right: 1rem;
+  
+  }
+  
+  button {
+    color: hsl(var(--clr-light));
+    background-color: hsl(var(--clr-primary));
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: var(--fs-200);
+    font-weight: 700;
+  }
+  
+  .time_joined {
+    color: hsl(var(--clr-accent));
+  }
+  .username {
+    color: hsl(var(--clr-primary));
+    margin-bottom: 1rem;
+  }
+  .bio {
+    color: hsl(var(--clr-accent));
+    font-size: var(--fs-100);
+  }
+  .user-summary  {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: var(--fs-100);
+  }
+  .links div p:nth-child(1) {
+    padding-bottom: 0.5rem;
+  }
+
+  
+  
