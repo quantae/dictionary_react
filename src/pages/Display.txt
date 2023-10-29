@@ -88,7 +88,7 @@ export const NoDefinitionFound = ({ data }) => {
 };
 
 
-export const Display = ({ data }) => {
+const Display = ({ data }) => {
   // apply selected font here
   const { isDark } = useContext(ThemeContext);
   const { selectedFont } = useContext(FontContext);
@@ -103,7 +103,20 @@ export const Display = ({ data }) => {
     );
   } */
   
-  
+  if (Array.isArray(data) && data.length > 0) {
+    return (
+      <div>
+        <Intro />
+      </div>
+    );
+  } else if (typeof data === "object") {
+    console.log('data in === object: ', data)
+    return (
+      <div>
+        <NoDefinitionFound data={data} />
+      </div>
+    );
+  } 
 
   
   // find phonetics text even if its position changes in the Array of objects.
@@ -146,30 +159,4 @@ export const Display = ({ data }) => {
   );
 };
 
-const WordCheckBeforeDisplay = ({data}) => {
-  console.log('type of === object: ', typeof(data))
-  if (Array.isArray(data) && !data.length) {
-    return (
-      <div>
-        <Intro />
-      </div>
-    );
-  } else if (data.title) {
-    
-    console.log('data in === object: ', data)
-    return (
-      <div>
-        <NoDefinitionFound data={data} />
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <Display data={data} />
-      </div>
-    );
-  }
- 
-}
-
-export default WordCheckBeforeDisplay;
+export default Display;

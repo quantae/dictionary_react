@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 .dropdown_container {
+   height: 2rem !important;
    position: relative;
 }
 
@@ -55,7 +56,6 @@
     }
 }
 
-    
 
 .dark_dropdown_list_container {
     background-color: var(--clr-dark3) !important;

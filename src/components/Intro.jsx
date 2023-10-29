@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import dictionaryLogo from '../aserts/logo.svg';
-import styles from './intor.module.css';
+import styles from './intro.module.css';
 import { ThemeContext } from '../services/context/themeContext';
 
 const Intro = () => {

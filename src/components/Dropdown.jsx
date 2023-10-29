@@ -21,7 +21,7 @@ const Dropdown = ({ listItems, selectedValue, onClick }) => {
 
   
   return (
-    <div className={`${isDark ? 'dark_theme' : ''} ${style.dropdown_container} `}>
+    <div className={`${isDark ? 'dark_theme' : 'light_theme'} ${style.dropdown_container} `}>
       <div
         tabIndex={-1}
         className={style.dropdown_header}

@@ -117,3 +117,31 @@
     }
 
   }
+
+  /******
+  ** No Definition Styles**
+  **/
+  .no_definition {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  .dark_no_definition {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  .no_definition img {
+    max-width: 15%;
+  }
+  .dark_no_definition img {
+    max-width: 15%;
+  }

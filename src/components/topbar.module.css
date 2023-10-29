@@ -1,4 +1,11 @@
 
+.logo_container {
+  height: fit-content;
+}
+.topbar_container {
+  height: 3rem;
+}
+
 select {
     border: none;
    /* padding-right: 0.3rem; */

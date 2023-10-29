@@ -5,12 +5,12 @@ import moonIconDark from '../aserts/icon-moon-dark.svg'
 import ToggleSwitch from "./ToggleSwitch";
 import { FontContext } from "../services/context/FontContext";
 import { ThemeContext } from "../services/context/themeContext";
-import style from './topbar.module.css'
+import styles from './topbar.module.css'
 import Dropdown from "./Dropdown";
 
 export const Logo = () => (
-  <div>
-    <img src={dictionarylogo} alt="dictionary logo" style={{width: '1.5rem'}}/>
+  <div className={styles.logo_container}>
+    <img src={dictionarylogo} alt="dictionary logo" styles={{width: '1.5rem', maxHeight:'fit-content'}}/>
   </div>
 );
 
@@ -28,7 +28,7 @@ useEffect(() => {
 }, [selectedFont]);
 
     return (
-        <div className={`flex ${style.custom_select}`}>
+        <div className={`flex ${styles.custom_select}`}>
           <Dropdown
           listItems={FONT_LIST}
           selectedValue={selectedFont}
@@ -61,9 +61,9 @@ export const ThemeToggle = () => {
         <div className="flex-gap">
             <ToggleSwitch onChange={handleToggleSwitch} checked={isDark} />
             {isDark ? (
-              <img src={moonIconDark} alt="moon icon" style={{height: '1.2rem'}}/>
+              <img src={moonIconDark} alt="moon icon" styles={{height: '1.2rem'}}/>
             ) : (
-              <img src={moonIconLight} alt="moon icon" style={{height: '1.2rem'}}/>
+              <img src={moonIconLight} alt="moon icon" styles={{height: '1.2rem'}}/>
             )}
         </div>
     )
@@ -71,7 +71,7 @@ export const ThemeToggle = () => {
 
 const TopBar = () => {
   return (
-    <div className="flex-space-between">
+    <div className={`flex-space-between ${styles.topbar_container}`}>
       <Logo />
       <div className="flex-gap align-center">
         <FontSelect />
