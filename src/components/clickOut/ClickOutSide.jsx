@@ -17,7 +17,7 @@ const ClickOutSide = ({children, exceptionRef, onClick, className}) => {
         return () => {
             document.removeEventListener('mousedown', handleClickListener);
         };
-    },[]);
+    },);
     const handleClickListener = (event) => {
         let clickedInside;
         if(exceptionRef) {
