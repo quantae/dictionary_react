@@ -4,8 +4,7 @@ import searchIcon from '../aserts/icon-search.svg';
 import { ThemeContext } from '../services/context/themeContext';
 import { Formik,Form, useField } from 'formik';
 import * as Yup from 'yup';
-import fetchWord from '../services/utils/fetch';
-import { useState } from 'react';
+
 
 export const TextInput = ({disabled, onClick, label, ...props }) => {
    // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
@@ -30,13 +29,13 @@ export const TextInput = ({disabled, onClick, label, ...props }) => {
   );
 }
 const SearchBar = ({value, onClick, onChange, onSubmit}) => {
-  const [word, setWord] = useState("");
-  const [data, setData] = useState([]);
+ 
 
-  const handleChange = (e) => {
+
+  /*const handleChange = (e) => {
     setWord(e.target.value);
     console.log(word)
-  };
+  }; */
   
   /*const handleSubmit = async (values, { setSubmitting }) => {
     setTimeout(() => {

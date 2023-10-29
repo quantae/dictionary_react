@@ -8,7 +8,6 @@ import { ThemeContext} from "./services/context/themeContext";
 import WordCheckBeforeDisplay from "./pages/Display";
 
 function App() {
-  const [word, setWord] = useState("");
   const [data, setData] = useState([]);
   const { isDark } = useContext(ThemeContext);
 

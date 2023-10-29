@@ -82,21 +82,21 @@
   .synonym_wrap {
     display: flex;
     gap: 1rem;
-    align-items:start;
+    align-items:flex-start;
     justify-content:flex-start;
     padding-bottom: 1rem;
   }
   .antonym_wrap {
     display: flex;
     gap: 1rem;
-    align-items:start;
+    align-items:flex-start;
     justify-content:flex-start;
     padding-bottom: 1rem;
   }
   .source_wrap {
     display: flex;
     gap: 1rem;
-    align-items:start;
+    align-items:flex-start;
     justify-content:flex-start;
     padding-bottom: 1rem;
   }
