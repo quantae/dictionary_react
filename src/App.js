@@ -5,9 +5,6 @@ import SearchBar from "./components/SearchBar";
 import Display from "./pages/Display";
 import { useContext, useState } from "react";
 import fetchWord from "./services/utils/fetch";
-import { Formik, Form, useField } from "formik";
-import styles from './App.module.css'
-
 import { ThemeContext} from "./services/context/themeContext";
 
 function App() {
@@ -15,10 +12,10 @@ function App() {
   const [data, setData] = useState([]);
   const { isDark } = useContext(ThemeContext);
 
-  const handleChange = (e) => {
+ /* const handleChange = (e) => {
     setWord(e.target.value);
     console.log(word)
-  };
+  }; */
 
   // react submit
   /*

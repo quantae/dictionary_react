@@ -5,9 +5,9 @@ import { ReactComponent as PlayIcon } from "../aserts/icon-play.svg";
 import playIconImg from '../aserts/icon-play.svg'
 import { FontContext } from "../services/context/FontContext";
 import { useContext } from "react";
-import { darkThemeStyle } from "../styles/themes/darkTheme";
 import { ThemeContext } from "../services/context/themeContext";
-import { useMemo } from "react";
+import Intro from "../components/Intro";
+
 
 export const RenderMeaning = (meaning, index) => {
   
@@ -53,14 +53,13 @@ const Display = ({data}) => {
   const {isDark} = useContext(ThemeContext)
   const {selectedFont} = useContext(FontContext)
  
-
-  
   const responseData =  data[0];
   // Check if the data array is empty
   if (!data.length) { 
     return (
       <div>
-        <p>Type a word</p>
+        <Intro/>
+  
       </div>
     );
   }

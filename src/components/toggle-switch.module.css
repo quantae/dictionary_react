@@ -2,7 +2,9 @@
   padding: 0;
   margin: 0;
 }
-
+ .check_input {
+  display: none;
+ }
 .toggle_switch {
   width: 3rem;
   height: 1.3rem;
