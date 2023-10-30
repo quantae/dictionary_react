@@ -16,7 +16,7 @@ const Intro = () => {
         <div className={`flex-space-between ${styles.user_summary}`}>
           <div className=''>
              <h1 className='text-dark'>Dictionary</h1>
-             <p className='username'>designed by: @cssgerald</p>
+             <p className='username'>designed by: <span className={styles.link}><a href='https://twitter.com/cssgerald?s=21' target='_blank' rel='noreferrer'> cssgerald</a></span></p>
              <p className={styles.description}>A portfolio project as part of frontend bootcamp curriculum using dictionaryapi.dev</p>
           </div>
           <h6 className='time_joined'>Oct 2023</h6>
@@ -25,7 +25,7 @@ const Intro = () => {
           <div className={`flex-space-between ${styles.follower_history}`}>
             <img src='https://softr-prod.imgix.net/applications/f85a1484-7e05-4149-9d18-960420f69274/assets/1277f425-d2cd-4718-bb35-a7fb31148d88.png' alt='logo'/>
           </div>
-          <div className={styles.links}>
+          <div className={`${styles.links} ${styles.link}`}>
             <div>
               <p><i class="fa-solid fa-location-dot"></i> Accra, Ghana</p>
              <p> <i class="fa-solid fa-link"></i> <a href='https://www.azubiafrica.org/' target='_blank' rel="noreferrer">https://www.azubiafrica.org/</a></p>

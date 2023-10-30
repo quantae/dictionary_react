@@ -3,7 +3,7 @@
     background: hsl(var(--clr-white));
     padding: 1.5rem 2rem;
     border-radius: 0.5rem;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.02);
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: auto;
@@ -68,13 +68,13 @@
      align-items: center;
      gap: 1rem;
  }
- .links a:visited {
+.link a:visited {
     color: var(--clr-grey1);
  }
- .links a {
+ .link a {
     color: var(--clr-grey1);
  }
- .links p {
+ .link p {
     margin: 0.3rem 0
 }
   
