@@ -24,7 +24,6 @@
 }
 
 
-
 /* ---------------------*/
 /* Custom properties    */
 /* -------------------- */
@@ -38,6 +37,7 @@
     --clr-dark4: #3A3A3A;
 
     --clr-light: 227, 100%, 98%;
+    --clr-light-test: #f5f7ff;
 
     --clr-white: 0, 0%, 100%;
     --clr-grey1: #757575;

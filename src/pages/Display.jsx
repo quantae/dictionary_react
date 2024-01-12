@@ -9,7 +9,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../services/context/themeContext";
 import Intro from "../components/Intro";
 
-export function PlayIconComponent() {
+export function PlayIconComponent({ onPlayClick }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -19,10 +19,20 @@ export function PlayIconComponent() {
     setIsHovered(false);
   };
   const PlayIcon = () => (
-    <img src={playIcon} alt="play icon" style={{ maxWidth: "70%" }} />
+    <img
+      src={playIcon}
+      alt="play icon"
+      style={{ maxWidth: "70%" }}
+      onClick={onPlayClick}
+    />
   );
   const PlayIconHover = () => (
-    <img src={playIconHover} alt="play icon" style={{ maxWidth: "70%" }} />
+    <img
+      src={playIconHover}
+      alt="play icon"
+      style={{ maxWidth: "70%" }}
+      onClick={onPlayClick}
+    />
   );
   return (
     <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
@@ -78,7 +88,9 @@ export const NoDefinitionFound = ({ data }) => {
   const { isDark } = useContext(ThemeContext);
 
   return (
-    <div className={`${isDark ?  styles.dark_no_definition : styles.no_definition }`}>
+    <div
+      className={`${isDark ? styles.dark_no_definition : styles.no_definition}`}
+    >
       <img src={noDefImojo} alt="noDefImojo" />
       <h4>{data.title}</h4>
       <p>{data.message}</p>
@@ -87,25 +99,15 @@ export const NoDefinitionFound = ({ data }) => {
   );
 };
 
-
 export const Display = ({ data }) => {
   // apply selected font here
   const { isDark } = useContext(ThemeContext);
   const { selectedFont } = useContext(FontContext);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [noAudio, setNoAudio] = useState(false);
 
   const responseData = data[0];
-  // Check if the data array is empty
-  /*if (!data.length) { 
-    return (
-      <div>
-        <Intro/>
-      </div>
-    );
-  } */
-  
-  
 
-  
   // find phonetics text even if its position changes in the Array of objects.
   const phoneticsText = responseData.phonetics.find(
     (phonetic) => phonetic.text
@@ -114,6 +116,21 @@ export const Display = ({ data }) => {
   // set the meanins array to a varable
   const meanings = responseData.meanings;
   //const synonyms = responseData.meanings.synonyms;
+
+  // play audio handler
+  const handlePlayAudioClick = () => {
+    if (phoneticsText && phoneticsText.audio) {
+      const audio = new Audio(phoneticsText.audio);
+      audio.onplaying = () => setIsPlaying(true);
+      audio.onended = () => setIsPlaying(false);
+      audio.play();
+    } else {
+     setNoAudio(true);
+    } 
+    setTimeout(() => {
+      setNoAudio(false);
+    },2000)
+  };
 
   return (
     <div className={`${selectedFont} ${isDark ? "dark_theme" : ""}`}>
@@ -126,15 +143,23 @@ export const Display = ({ data }) => {
             <h6>No phonetics</h6>
           )}
         </div>
-        <div className="flex-right">
-          <PlayIconComponent />
+        <div className="flex-right" style={{display:"flex", flexDirection:'column'}}>
+          <PlayIconComponent onPlayClick={handlePlayAudioClick} />
+          <div>
+             {noAudio ? (
+            <span>"No audio resources"</span>
+          ) : (
+            isPlaying && <span className="">playing...</span>
+          )}
+          </div>
+         
         </div>
       </div>
       {meanings.map((meaning, index) => RenderMeaning(meaning, index))}
       <div className="hr"></div>
       <div className={`${styles.source_wrap}`}>
         <h6>source</h6>
-        <a href={responseData.sourceUrls}>
+        <a href={responseData.sourceUrls} target="_blank" rel="noopener noreferrer">
           {responseData.sourceUrls}
           <span>
             {" "}
@@ -146,8 +171,8 @@ export const Display = ({ data }) => {
   );
 };
 
-const WordCheckBeforeDisplay = ({data}) => {
-  console.log('type of === object: ', typeof(data))
+const WordCheckBeforeDisplay = ({ data }) => {
+  console.log("type of === object: ", typeof data);
   if (Array.isArray(data) && !data.length) {
     return (
       <div>
@@ -155,8 +180,7 @@ const WordCheckBeforeDisplay = ({data}) => {
       </div>
     );
   } else if (data.title) {
-    
-    console.log('data in === object: ', data)
+    console.log("data in === object: ", data);
     return (
       <div>
         <NoDefinitionFound data={data} />
@@ -169,7 +193,6 @@ const WordCheckBeforeDisplay = ({data}) => {
       </div>
     );
   }
- 
-}
+};
 
 export default WordCheckBeforeDisplay;
