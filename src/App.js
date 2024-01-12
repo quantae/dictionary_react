@@ -10,6 +10,7 @@ import WordCheckBeforeDisplay from "./pages/Display";
 function App() {
   const [data, setData] = useState([]);
   const { isDark } = useContext(ThemeContext);
+  const [searchWord, setSearchWord] = useState("");
 
   useEffect(() => {
   
@@ -18,16 +19,22 @@ function App() {
 
   // FORMIK SUBIT
   const handleSubmit = async (values, { setSubmitting }) => {
+   
     setTimeout(() => {
       fetchWord(values.search).then((fetchedData) => {
         //fetchedData = JSON.stringify(fetchedData,undefined, 4)
+        setSearchWord(values.search);
+        console.log('searchWord variable',searchWord)
+
+        
         setData(fetchedData);
         console.log("data from api: ", fetchedData);
         setSubmitting(false);
-        console.log("word typed: ", values);
+        console.log("word typed: ", values.search);
       });
     }, 100);
   };
+
 
   return (
     <div className={`${isDark ? "dark_theme" : "light_theme"}`}>
@@ -35,7 +42,7 @@ function App() {
         <TopBar />
         <SearchBar onSubmit={handleSubmit} />
 
-        <WordCheckBeforeDisplay data={data} />
+        <WordCheckBeforeDisplay data={data} searchWord={searchWord} />
       </div>
     </div>
   );

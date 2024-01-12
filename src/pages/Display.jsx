@@ -84,7 +84,7 @@ export const RenderMeaning = (meaning, index) => {
   );
 };
 
-export const NoDefinitionFound = ({ data }) => {
+export const NoDefinitionFound = ({ data, searchWord }) => {
   const { isDark } = useContext(ThemeContext);
 
   return (
@@ -92,7 +92,7 @@ export const NoDefinitionFound = ({ data }) => {
       className={`${isDark ? styles.dark_no_definition : styles.no_definition}`}
     >
       <img src={noDefImojo} alt="noDefImojo" />
-      <h4>{data.title}</h4>
+      <h4>{data.title} for "{searchWord}"</h4>
       <p>{data.message}</p>
       <p>{data.resolution}</p>
     </div>
@@ -171,7 +171,7 @@ export const Display = ({ data }) => {
   );
 };
 
-const WordCheckBeforeDisplay = ({ data }) => {
+const WordCheckBeforeDisplay = ({ data, searchWord }) => {
   console.log("type of === object: ", typeof data);
   if (Array.isArray(data) && !data.length) {
     return (
@@ -183,7 +183,7 @@ const WordCheckBeforeDisplay = ({ data }) => {
     console.log("data in === object: ", data);
     return (
       <div>
-        <NoDefinitionFound data={data} />
+        <NoDefinitionFound data={data} searchWord={searchWord} />
       </div>
     );
   } else {
