@@ -12,10 +12,15 @@ function App() {
   const { isDark } = useContext(ThemeContext);
   const [searchWord, setSearchWord] = useState("");
 
-  useEffect(() => {
-  
+  // DARK MODE
+useEffect(() => {
+  if (isDark) {
+    document.body.style.backgroundColor = "#050505";
+  } else {
     document.body.style.backgroundColor = "#f5f7ff";
-}, []);
+  }
+ 
+}, [isDark]);
 
   // FORMIK SUBIT
   const handleSubmit = async (values, { setSubmitting }) => {
